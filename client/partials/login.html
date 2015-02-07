@@ -1,0 +1,8 @@
+<div class="dialog-box">
+    <div class="dialog-box-title">Sign In (select user)</div>
+    <div class="dialog-box-content">
+        <div class="inlay"><select style="border: 0px solid red" ng-model="myUser" ng-options="user.name for user in users"></select></div>
+        <div class="inlay"><input type="text" value="Password is not required" disabled id="password" style="color:#aaa"></div>
+        <div class="button boxcenter signin" ng-click="setContact(myUser)">Sign In</div>
+    </div>
+</div>

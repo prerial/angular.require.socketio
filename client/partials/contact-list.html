@@ -1,0 +1,6 @@
+<ul class="chatContacts">
+<li class="contact-list" ng-repeat="contact in contacts" ng-click="setContact(contact, $event)">
+    <div id="user_{{contact.chid}}" class="presence {{contact.presence}} gender_{{contact.profile.gender}}" style="float:left;background-image:url({{contact.avatar}});backgrounf-size:60px 60px;background-size: contain;"></div>
+    <div class="contactTitle">{{contact.profile.firstname}} {{contact.profile.midname}} {{contact.profile.lastname}}<div class="contact-location">{{contact.profile.location}}</div></div>
+</li>
+</ul>

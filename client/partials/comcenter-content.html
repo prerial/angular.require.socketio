@@ -1,0 +1,53 @@
+    <div class="comcenter-container">
+        <div class="chat-pane-left">
+
+            <ng-include class="userContact" ng-controller="userContactCtrl" src="'partials/user-contact.html'"></ng-include>
+
+            <ng-include class="chatToolbar" style="" src="'partials/toolbar.html'"></ng-include>
+
+            <div style="height:34px;"><div class="sectionTitle contact-list-title">Contact List</div></div>
+
+            <div class="contact panel">
+
+                <ng-include class="contactList" ng-controller="contactsCtrl" src="'partials/contact-list.html'"></ng-include>
+
+            </div>
+
+        </div>
+
+        <div class='chat-pane-right comcenter-display' ng-controller="workAreaController">
+            <div  style='z-index:1000'>
+
+                <ng-include id='chat_toolbar' ng-controller="chatToolbarCtrl" src="'partials/user-toolbar-contact.html'"></ng-include>
+
+                <div class="section-box-panel standard"  style="width:160px;margin:22px 24px 0 0;float:right;top:30px;background:#ebebeb;height:44px;border:0px solid red">
+                    <div id="btn-video-add" ng-click="showAlert({'title':'Video', 'message':'Video is coming soon'})" class="ccbutton icons" style="width:160px;z-index:1000">
+                        <div class="ccenter-icons icon-start-call"></div><p>Start Video Call</p>
+                    </div>
+                    <div id="btn-audio-add" ng-click="showAlert({'title':'Audio', 'message':'Audio is coming soon'})" class="ccbutton icons" style="width:160px;z-index:1000">
+                        <div class="ccenter-icons icon-start-call"></div><p>Start Phone Call</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id='chat-container' class='chat-pane-right'>
+
+                <ng-include src="'partials/panel/chat.html'"></ng-include>
+
+            </div>
+
+            <div id='phone-container' class='chat-pane-right'>
+
+                <ng-include src="'partials/panel/phone.html'"></ng-include>
+
+            </div>
+
+            <div id='video-container' class='chat-pane-right'>
+
+                <ng-include src="'partials/panel/video.html'"></ng-include>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="comcenter-footer grad"><span class="footer-title">Connected</span></div>

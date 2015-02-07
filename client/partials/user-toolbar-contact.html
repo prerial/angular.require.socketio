@@ -1,0 +1,9 @@
+<ul class="chatContacts toolbar-user">
+<li class="contact-list">
+    <div class="presence {{contact.presence}}" style="z-index:800;overflow:hidden;">
+        <img ng-src="{{contact.avatar}}" class="img-toolbar-contact" ng-repeat="contact in contacts" ng-class="{active: mainImageUrl==contact.avatar}">
+    </div>
+    <div class="contactTitle">{{contact.profile.firstname}} {{contact.profile.midname}} {{contact.profile.lastname}}<div class="contact-location">{{contact.profile.location}}</div></div>
+</li>
+</ul>
+
