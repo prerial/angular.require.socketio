@@ -11,3 +11,15 @@
 
 - Get [Node.js][node-download].
 
+- install packages
+$ npm install
+
+- start MongoDB
+
+- load data
+$ node load
+
+
+- start Node
+$ node server
+
