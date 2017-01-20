@@ -5,7 +5,6 @@
   "homepage": "https://github.com/prerial/angular.mongoose.products.git",
   "license": "MIT",
   "private": true,
-  "directory":"target/",
   "dependencies": {
     "angular": "1.5.10",
     "angular-animate": "1.5.10",
