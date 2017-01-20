@@ -12,13 +12,7 @@
     "angular-mocks": "1.5.10",
     "angular-resource": "1.5.10",
     "angular-route": "1.5.10",
-    "angular-messages": "1.5.10",
-    "a0-angular-storage": "0.0.15",
-    "angular-jwt": "0.1.8",
-    "sugar": "2.0.4",
     "bootstrap": "3.3.x",
-    "headjs": "1.0.3",
-    "jquery-flot": "0.8.3",
     "jquery": "3.1.x"
   }
 }

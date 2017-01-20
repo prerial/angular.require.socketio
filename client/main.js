@@ -1,11 +1,11 @@
 require.config({
   paths: {
     'socketio': 'libs/socket.io/socket.io-1.0.6',
-    'angular': 'libs/angular/angular',
-    'jquery': 'libs/jquery/dist/jquery',
-    'angular-route': 'libs/angular-route/angular-route',
-    'angular-resource':'libs/angular-resource/angular-resource',
-    'angular-animate':'libs/angular-animate/angular-animate',
+    'angular': 'bower_components/angular/angular',
+    'jquery': 'bower_components/jquery/dist/jquery',
+    'angular-route': 'bower_components/angular-route/angular-route',
+    'angular-resource':'bower_components/angular-resource/angular-resource',
+    'angular-animate':'bower_components/angular-animate/angular-animate',
     'domready': 'libs/require/domready'
   },
   shim: {
