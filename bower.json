@@ -1,8 +1,8 @@
 {
-  "name": "angular-mongoose-products",
+  "name": "angular-require-socketio",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/prerial/angular.mongoose.products.git",
+  "homepage": "https://github.com/prerial/angular.require.socketio.git",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -12,6 +12,9 @@
     "angular-resource": "1.5.10",
     "angular-route": "1.5.10",
     "bootstrap": "3.3.x",
-    "jquery": "3.1.x"
+    "requirejs":"2.3.3",
+    "requirejs-domready": "2.0.1",
+    "jquery": "3.1.x",
+    "socket.io-client": "1.7.2"
   }
 }
