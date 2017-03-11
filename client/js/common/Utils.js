@@ -1,10 +1,10 @@
 ﻿
 
-
+/*
         var randomBetween = function (from, to) {
             return Math.floor(Math.random() * (to - from + 1) + from);
         };
-
+*/
         var createUUID= (function (uuidRegEx, uuidReplacer) {
             return function () {
                 return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(uuidRegEx, uuidReplacer).toUpperCase();
@@ -14,13 +14,13 @@
                 v = c == "x" ? r : (r & 3 | 8);
             return v.toString(16);
         });
-
+/*
         var createDialog = function (options) {
 
             return new DialogView(options);
 
         };
-
+*/
         var busy = function (show, zIndex) {
             if (show) {
                 BusyOverLay.open(zIndex);
@@ -28,7 +28,7 @@
                 BusyOverLay.close();
             }
         };
-
+/*
         var byte2Str = function (val) {
             var possibleTypes = ['bytes', 'KB', 'MB', 'GB'],
                 canContinue = false,
@@ -49,7 +49,7 @@
             } while (canContinue);
             return size + ' ' + possibleTypes[count];
         };
-
+*/
         var string = {
             contains: function (str, needle) {
                 if (needle === '') return true;

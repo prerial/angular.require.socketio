@@ -26,7 +26,7 @@ define(['angular'], function(angular) {
             element.stop();
           }
         };
-      }
+      };
 
       var animateDown = function(element, className, done) {
         if(className != 'active') {
@@ -48,7 +48,7 @@ define(['angular'], function(angular) {
             element.stop();
           }
         };
-      }
+      };
 
       return {
         addClass: animateUp,

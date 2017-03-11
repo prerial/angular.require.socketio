@@ -3,8 +3,8 @@ define(['angular'], function(angular) {
     'use strict';
     var directives = angular.module('directives', ['ngAnimate']);
 
-    directives.directive('comCenterIcon', ['$animate', function($animate) {
-        return function(scope, element, attrs) {
+    directives.directive('comCenterIcon', function() {
+        return function(scope, element) {
             element.on('click', function() {
                 if(scope.opened || scope.opened === undefined){
                    $('#comcenter').width(0);
@@ -15,7 +15,7 @@ define(['angular'], function(angular) {
                 }
                 if(!scope.initialized){
                     scope.initialized = true;
-                    $("#btn-video-add").hide()
+                    $("#btn-video-add").hide();
                     $('#btn-audio-add').hide();
                     $('#phone-container').width(0);
                     $('#video-container').width(0);
@@ -23,7 +23,7 @@ define(['angular'], function(angular) {
                 $(window).resize();
             });
         };
-    }]);
+    });
     directives.directive("alertUtil", function($animate) {
 
         return  {

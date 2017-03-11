@@ -1,6 +1,6 @@
 function onMediaError(e) {
     console.error('Error:', e.name, e.message);
-};
+}
 
 var mediaRoom = function() {
     var _this = this;
@@ -21,7 +21,7 @@ var mediaRoom = function() {
     };
 
     this.gotLocalStream = function (stream) {
-        debugger
+
     };
 
     this.start = function (param) {
@@ -58,15 +58,14 @@ var mediaRoom = function() {
             console.log('Failed to create PeerConnection, exception: ' + e.message);
             alert('Cannot create RTCPeerConnection object; \
             WebRTC is not supported by this browser.');
-            return;
         }
-    };
+    }
 
     this.doAnswer = function () {
         console.debug('Sending answer to peer.');
         _this.peers[_this.user].createAnswer(setLocalAndSendMessage, onMediaError, InviewApp.Config.Constrains.MediaConstraints[_this.type]);
         console.debug('Sending answer to peer, with constraints:', InviewApp.Config.Constrains.MediaConstraints[_this.type]) ;
-    }
+    };
 
     function setLocalAndSendMessage(sessionDescription) {
         _this.peers[_this.user].setLocalDescription(sessionDescription);
@@ -74,14 +73,14 @@ var mediaRoom = function() {
         data.type = _this.type + sessionDescription.type;
         data.sdp = sessionDescription.sdp;
         sendMessage(data);
-    };
+    }
 
     function sendMessage(message) {
         var msgString = JSON.stringify(message);
         console.log('C->S: ', message.sdp? message.sdp: message);
         console.log('=======================================');
         App[_this.type][_this.type + 'Socket'].send(message);
-    };
+    }
 
     function onIceCandidate(event) {
         if (event.candidate) {
@@ -94,7 +93,7 @@ var mediaRoom = function() {
         } else {
             console.log('End of candidates.');
         }
-    };
+    }
 
     this.reattachMediaStream = function (to, from) {
         to.src = from.src;
@@ -119,11 +118,11 @@ var mediaRoom = function() {
             _this.remoteStream = event.stream;
         }
         waitForRemoteVideo();
-    };
+    }
 
     function onRemoteStreamRemoved(event) {
         console.log('Remote stream removed.');
-    };
+    }
 
     this.hangup = function () {
         if (_this.remoteStream !== null) {
@@ -181,7 +180,7 @@ var mediaRoom = function() {
             _this.initialized = true;
             _this.initialize();
         }
-    };
+    }
 
     function waitForRemoteVideo() {
         videoTracks = _this.remoteStream.getVideoTracks();
@@ -195,14 +194,14 @@ var mediaRoom = function() {
             }
         }catch(ex){
         }
-    };
+    }
 
     function transitionToActive() {
         _this.remoteContainer.css('display', 'block').css('opacity', 1);
         if(_this.miniContainer !== null) {
             _this.miniContainer.css('opacity', 1).css('width', '110px')
         }
-    };
+    }
 
     function transitionToWaiting() {
         if(_this.miniContainer !== null) _this.miniContainer.css('width', '0px');
@@ -219,7 +218,7 @@ var mediaRoom = function() {
             if(miniVideo && miniVideo.src) miniVideo.src = '';
             if(remoteVideo && remoteVideo.src) remoteVideo.src = '';
         }, 1000);
-    };
+    }
 /*
     $(window).on('beforeunload', function () {
         console.debug('beforeunload', _this.type + 'hangup')
@@ -228,7 +227,7 @@ var mediaRoom = function() {
 */
     function enterFullScreen() {
         container.webkitRequestFullScreen();
-    };
+    }
 
     this.toggleVideoMute = function() {
         var videoTracks = this.localStream.getVideoTracks();
