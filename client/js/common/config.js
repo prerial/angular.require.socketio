@@ -1,14 +1,15 @@
-var Appl = {};
+//var Appl = {};
 
-var blnTest = true;
+//var blnTest = true;
 var HEADER_HEIGHT = 48;
 var FOOTER_HEIGHT = 26;
-
+/*
 var RTCPeerConnection = window.mozRTCPeerConnection || window.webkitRTCPeerConnection || window.RTCPeerConnection;
 var RTCSessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
 var RTCIceCandidate = window.RTCIceCandidate;
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-window.brURL = window.webkitURL || window.URL;
+*/
+window.brURL = window.URL;
 window.MediaStream = window.MediaStream || window.webkitMediaStream;
 
 var isFirefox = !!navigator.mozGetUserMedia;
@@ -21,7 +22,7 @@ var audioConstraints = {
         'OfferToReceiveVideo': false
      }
 };
-
+/*
 var videoConstraints = {
     'optional': [],
     'mandatory': {
@@ -29,12 +30,12 @@ var videoConstraints = {
         'OfferToReceiveVideo': true
      }
 };
-
+*/
 if (isChrome) {
     audioConstraints.optional = [{
         DtlsSrtpKeyAgreement: true
     }];
-};
+}
 
 var iceServers = [];
 if (isFirefox) {
@@ -59,7 +60,7 @@ if (isChrome) {
         credential: 'webrtc',
         username: 'webrtc'
     }];
-};
+}
 
 iceServers = {
     iceServers: iceServers
@@ -91,23 +92,14 @@ Prerial.Config.Constrains.MediaConstraints = {
         }
     }
 };
-
-var audioConstraints = {
-};
-
-var videoConstraints = {
-};
-
-
-
-
-Prerial.Config.Dialogs = {}
+/*
+Prerial.Config.Dialogs = {};
 Prerial.Config.Dialogs.DeleteContact = '<li action="delete">Delete Contact</li><li action="cancel">Cancel</li>';
 Prerial.Config.Dialogs.EditContacts = '<li action="add">Add Contact</li><li action="info">Contacts Info</li><li action="edit">Delete Contacts</li><li action="cancel">Cancel</li>';
 Prerial.Config.Dialogs.EditGroupContacts = '<li action="addgroup">Add Group</li><li action="add">Add Contact</li><li action="info">Contacts Info</li><li action="edit">Delete Contacts</li><li action="cancel">Cancel</li>';
 Prerial.Config.Dialogs.Edit = '<li action="edit"><form><textarea cols="25" rows="13" placeholder="let me grow and close the popup" id="editDialog1" name="editDialog"></textarea></form></li>';
 Prerial.Config.Dialogs.Invite = null;
-
+*/
 Prerial.Config.LoginData = [
     {user: "1", name:"John Doe",value:"john.doe@citi.com"},
     {user: "2", name:"Jane Doe",value:"jane.doe@citi.com"}
@@ -144,9 +136,8 @@ Prerial.Config.InitContactData = {
     "avatar": "imgs/chat/avatar_m.gif",
     "presence": "offline"
 };
-Prerial.Config.TestChatList = {}
-Prerial.Config.TestChatList['john.doe@citi.com'] =
-{
+Prerial.Config.TestChatList = {};
+Prerial.Config.TestChatList['john.doe@citi.com'] = {
     "chid": "001",
     "cnport": "cn001",
     "vrport": "vr001",
@@ -334,12 +325,14 @@ Prerial.Config.ChatSettingsTitles = [
     {title: 'Add Chat Group', icon: ''}
 ];
 Prerial.Utils = {};
+/*
 Prerial.Utils.setContactModel = function () {
     var md = Backbone.Model.extend();
     var model = new md;
-    model.set(arguments[0])
+    model.set(arguments[0]);
     return model;
 };
+*/
 Prerial.Utils.stopPropagation = function (e) {
     if (e.preventDefault) e.preventDefault();
     if (e.stopPropagation) e.stopPropagation();
@@ -381,25 +374,25 @@ function NodeWebSocket (req) {
   this.socket.on(req.evt, function (data) {
     req.onmessage(data)
   });
-  this.doSend = function(data) {
-    _this.send(data);
-  };
+ // this.doSend = function(data) {
+ //   _this.send(data);
+ // };
   this.send = function(data) {
     _this.socket.emit(req.evt, data);
   };
   this.writable = true;
   return this;
-};
+}
 
 /********************************* stop Video ************************/
 
-function getToken() {
-    return (Math.random() * new Date().getTime()).toString(36).replace( /\./g , '');
-};
+//function getToken() {
+//    return (Math.random() * new Date().getTime()).toString(36).replace( /\./g , '');
+//}
 
 
 var App = {};
-App.isiPad = /iPad/i.test(navigator.userAgent) || /iPhone OS 3_1_2/i.test(navigator.userAgent) || /iPhone OS 3_2_2/i.test(navigator.userAgent);
+App.isiPad = false;///iPad/i.test(navigator.userAgent) || /iPhone OS 3_1_2/i.test(navigator.userAgent) || /iPhone OS 3_2_2/i.test(navigator.userAgent);
 App.authenticated = true;
 App.user = Prerial.Config.User;
 App.video = {};
